@@ -8,57 +8,15 @@
       rel="stylesheet"
       href='css/leaflet.css'
       crossorigin=""/>
-    <script src='js/leaflet.js'></script>
-    <script src='js/sql.js'></script>
-    
-    <style>
-      #PMLmap {
-        height: 98vh;
-      }
-    </style>
+    <link
+      rel="stylesheet"
+      href='css/main.css'
+      crossorigin=""/>
+    <script src='js/leaflet.js'></script>    
     <title>PML Demo</title>
   </head>
   <body>
     <div id="PMLmap"></div>
-
-    <script>
-      // Making a map and tiles
-      // Setting a higher initial zoom to make effect more obvious
-        const mymap = L.map('PMLmap').setView([-32.55, 151.45], 6);
-        // const tileUrl = './assests/maptiles/{z}/{x}/{y}.png';
-        const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-        const tiles = L.tileLayer(tileUrl, {maxZoom: 10});
-        tiles.addTo(mymap);
-
-      // Making a marker with a custom icon
-        const cowIcon = L.icon({
-            iconUrl: 'assests/cow.svg',
-            iconSize: [50, 50],
-            iconAnchor: [25, 25]
-        });
-        let marker = L.marker([0, 0], { icon: cowIcon }).addTo(mymap);
-      
-        
-
-        marker.setLatLng([-32.55, 151.45]);
-
-        let firstTime = true;
-
-        async function cowLocation() {
-        // const response = await fetch(api_url);
-        // const data = await response.json();
-        // const { latitude, longitude } = data;
-        
-        // Always set the view to current lat lon and zoom!
-        // mymap.setView([latitude, longitude], mymap.getZoom());
-        // marker.setLatLng([latitude, longitude]);
-
-        // document.getElementById('lat').textContent = latitude.toFixed(2);
-        // document.getElementById('lon').textContent = longitude.toFixed(2);
-        }
-
-        cowLocation();
-        setInterval(cowLocation, 1000);
-    </script>
+    <script src="js/main.js"></script>
   </body>
 </html>
