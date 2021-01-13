@@ -94,10 +94,11 @@ async function fetchData() {
                     default:
                 }
             }
+
             var activeTags = [];
             for(var i = 0; i < info.length; i++){
                 if(info[i][2] == 1){
-                    activeTags.push(info[i]);
+                    activeTags.push(info[i]); // This disables tracking the tag if the flag is not set
                 }
             }
 
@@ -106,7 +107,7 @@ async function fetchData() {
             var items = []; // 0 Name, 1 ID, 2 Lat, 3 Lng, 4 time, 5 type
 
             for(var i = 0; i < activeTags.length; i++){
-                items.push([activeTags[i][1], activeTags[i][0], /*lat*/, /*lng*/, /*time*/ , activeTags[i][3]]);
+                items.push([activeTags[i][1], activeTags[i][0], /*lat*/, /*lng*/, /*time*/ , activeTags[i][3]]); // This creates the array that that map relies on
             }
 
 
